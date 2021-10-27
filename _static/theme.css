@@ -1,0 +1,42 @@
+
+#site-navigation {
+    background: #f3f5f6;
+}
+
+/* Expand the entire page to fill the screen; otherwise,
+ * on large screens, the coloured #site-navigation leaves
+ * an ugly white margin. This ensures it's always flush to the left.
+ * see https://github.com/executablebooks/sphinx-book-theme/pull/420
+ */
+body > div.container-xl {
+  max-width: none;
+}
+
+
+/* make clicking anchor links scroll to their target instead of jump to them */
+/* TODO: if restricted to only a { } this doesn't seem to take effect;
+  using '*' might be too general though?
+
+  see https://stackoverflow.com/questions/25020582/scrolling-to-an-anchor-using-transition-css3#47828777
+*/
+* {
+ scroll-behavior: smooth;
+}
+
+
+/* make the sidebar more readable */
+/* TODO: the browser says the size is set by:
+
+ .bd-sidebar .nav { font-size: var(--pst-sidebar-font-size) }
+
+ so perhaps there's a more officially supported parameter
+ that can be set in conf.py to control this.
+*/
+.bd-sidebar nav {
+  font-size: 1.3em;
+}
+
+/* clear sphinx-book-theme's default whitespace in the siderbar */
+div.navbar-brand-box {
+  padding-top: 0;
+}
